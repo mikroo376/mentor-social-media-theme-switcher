@@ -1,3 +1,38 @@
+/*
+(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+### Primary 
+
+
+#### Dark Theme
+
+- Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
+
+#### Light Theme
+
+- Toggle: hsl(230, 22%, 74%)
+
+### Neutral
+
+#### Dark Theme
+
+
+
+- Very Dark Blue (BG): hsl(230, 17%, 14%)
+- Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
+- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+- Desaturated Blue (Text): hsl(228, 34%, 66%)
+- White (Text): hsl(0, 0%, 100%)
+
+#### Light Theme
+
+- White (BG): hsl(0, 0%, 100%)
+- Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
+- Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
+- Dark Grayish Blue (Text): hsl(228, 12%, 44%)
+- Very Dark Blue (Text): hsl(230, 17%, 14%)
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 *,
 *::before,
 *::after {
@@ -10,4 +45,129 @@ html {
   box-sizing: border-box; }
 
 body {
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  color: #fff;
+  font-family: 'Inter', sans-serif; }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 144rem;
+  height: 80rem;
+  background: linear-gradient(to bottom, #1f212e 35%, #1e202a 35%);
+  z-index: -2; }
+  .main__socialMediaDb {
+    flex-basis: 50%;
+    display: flex;
+    width: 80%;
+    flex-direction: column; }
+    .main__socialMediaDb-header {
+      display: flex;
+      align-items: center;
+      height: 20%;
+      justify-content: space-between;
+      margin: 3rem 0;
+      font-weight: 700; }
+      .main__socialMediaDb-header .header-text .heading-primary {
+        font-size: 3rem; }
+      .main__socialMediaDb-header .header-text .followers-count {
+        color: #63687e;
+        font-size: 2rem; }
+    .main__socialMediaDb-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 3rem; }
+      .main__socialMediaDb-content-item {
+        height: 25rem;
+        background-color: #252a41;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly; }
+        .main__socialMediaDb-content-item .social-media {
+          color: #8b97c6;
+          font-weight: 700;
+          display: flex;
+          align-items: center; }
+          .main__socialMediaDb-content-item .social-media .icon {
+            margin-right: 0.6rem; }
+        .main__socialMediaDb-content-item .followers {
+          text-align: center; }
+          .main__socialMediaDb-content-item .followers-value {
+            font-size: 5rem;
+            font-weight: 700; }
+          .main__socialMediaDb-content-item .followers-text {
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+            color: #63687e;
+            text-transform: uppercase; }
+        .main__socialMediaDb-content-item .followersDifference {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #1db489;
+          font-weight: 700; }
+          .main__socialMediaDb-content-item .followersDifference .icon {
+            margin-right: 0.3rem; }
+        .main__socialMediaDb-content-item:nth-child(1), .main__socialMediaDb-content-item:nth-child(2) {
+          border-top: 0.4rem solid #198ff5; }
+        .main__socialMediaDb-content-item:nth-child(3) {
+          position: relative;
+          z-index: 1; }
+          .main__socialMediaDb-content-item:nth-child(3)::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            height: 4px;
+            width: 26.55rem;
+            background: linear-gradient(to right, #fdc468, #df4996);
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            z-index: -1; }
+        .main__socialMediaDb-content-item:last-child {
+          border-top: 0.4rem solid #c4032a; }
+          .main__socialMediaDb-content-item:last-child .difference-value {
+            color: #dc414c; }
+        .main__socialMediaDb-content-item:hover {
+          cursor: pointer;
+          background-color: #374062; }
+  .main__overview {
+    flex-grow: 1;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .main__overview .heading-secondary {
+      font-size: 2.8rem;
+      margin-bottom: 4rem; }
+    .main__overview-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 3rem; }
+      .main__overview-content-item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: right;
+        align-items: center;
+        padding: 1.5rem 3rem;
+        background-color: #252a41;
+        height: 13rem;
+        border-radius: 0.5rem; }
+        .main__overview-content-item:hover {
+          cursor: pointer;
+          background-color: #374062; }
+        .main__overview-content-item .item-description {
+          justify-self: left;
+          color: #8b97c6;
+          font-weight: 700; }
+        .main__overview-content-item .heading-tertiary {
+          justify-self: left;
+          font-size: 3rem; }
+        .main__overview-content-item .followersDifference {
+          font-weight: 700;
+          color: #1db489; }
+        .main__overview-content-item:nth-child(2) .followersDifference, .main__overview-content-item:nth-child(7) .followersDifference, .main__overview-content-item:nth-child(8) .followersDifference {
+          color: #dc414c; }
