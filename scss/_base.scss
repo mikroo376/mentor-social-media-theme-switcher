@@ -17,6 +17,14 @@ body {
   font-size: 1.4rem;
   color: #fff;
   font-family: 'Inter', sans-serif;
+
+  .main.active {
+    background: linear-gradient(
+      to bottom,
+      hsl(225, 100%, 98%) 35%,
+      hsl(0, 0%, 100%) 35%
+    );
+  }
 }
 
 .main {
@@ -59,6 +67,7 @@ body {
       .header-themeSwitcherBox {
         display: flex;
         align-items: center;
+
         .themeSwitcher {
           position: relative;
           margin-left: 1.5rem;
@@ -82,6 +91,19 @@ body {
             width: 2rem;
             background-color: hsl(229, 17%, 19%);
             border-radius: 20rem;
+            transition: 0.2s all linear;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .themeSwitcher.active {
+          &::after {
+            left: 92%;
+            transform: translate(-100%, -50%);
+            background-color: hsl(231, 24%, 84%);
+            transition: 0.2s all linear;
           }
         }
       }
@@ -172,6 +194,13 @@ body {
           background-color: lighten($color: $card-bg-color, $amount: 10);
         }
       }
+      &-item.active {
+        background-color: hsl(227, 47%, 96%);
+        &:hover {
+          // cursor: pointer;
+          background-color: darken($color: hsl(227, 47%, 96%), $amount: 10);
+        }
+      }
     }
   }
 
@@ -233,6 +262,24 @@ body {
           }
         }
       }
+      &-item.active {
+        background-color: hsl(227, 47%, 96%);
+        &:hover {
+          // cursor: pointer;
+          background-color: darken($color: hsl(227, 47%, 96%), $amount: 10);
+        }
+      }
     }
   }
+}
+.heading-primary.active,
+.heading-tertiary.active,
+.followers-value.active {
+  color: hsl(230, 17%, 14%);
+}
+
+.themeName.active,
+.followers-count.active,
+.heading-secondary.active {
+  color: hsl(228, 12%, 44%);
 }
