@@ -74,6 +74,27 @@ body {
       .main__socialMediaDb-header .header-text .followers-count {
         color: #63687e;
         font-size: 2rem; }
+      .main__socialMediaDb-header .header-themeSwitcherBox {
+        display: flex;
+        align-items: center; }
+        .main__socialMediaDb-header .header-themeSwitcherBox .themeSwitcher {
+          position: relative;
+          margin-left: 1.5rem;
+          display: inline-block;
+          height: 2.5rem;
+          width: 5rem;
+          border-radius: 4rem;
+          background: linear-gradient(to right, #378fe6, #3eda82); }
+          .main__socialMediaDb-header .header-themeSwitcherBox .themeSwitcher::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            height: 2rem;
+            width: 2rem;
+            background-color: #282b39;
+            border-radius: 20rem; }
     .main__socialMediaDb-content {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

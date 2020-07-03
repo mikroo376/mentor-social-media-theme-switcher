@@ -55,6 +55,36 @@ body {
           font-size: 2rem;
         }
       }
+
+      .header-themeSwitcherBox {
+        display: flex;
+        align-items: center;
+        .themeSwitcher {
+          position: relative;
+          margin-left: 1.5rem;
+          display: inline-block;
+          height: 2.5rem;
+          width: 5rem;
+          border-radius: 4rem;
+          background: linear-gradient(
+            to right,
+            hsl(210, 78%, 56%),
+            hsl(146, 68%, 55%)
+          );
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            height: 2rem;
+            width: 2rem;
+            background-color: hsl(229, 17%, 19%);
+            border-radius: 20rem;
+          }
+        }
+      }
     }
 
     &-content {
