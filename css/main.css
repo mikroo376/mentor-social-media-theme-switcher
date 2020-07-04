@@ -43,11 +43,28 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box; }
+  @media (max-width: 105em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 85.375em) {
+    html {
+      font-size: 45%; } }
+  @media (max-width: 64em) {
+    html {
+      font-size: 40%; } }
+  @media (max-width: 51.25em) {
+    html {
+      font-size: 35%; } }
+  @media (max-width: 34.375em) {
+    html {
+      font-size: 50%; } }
 
 body {
+  min-height: 100vh;
   font-size: 1.4rem;
   color: #fff;
-  font-family: 'Inter', sans-serif; }
+  font-family: 'Inter', sans-serif;
+  background-color: #1e202a; }
   body .main.active {
     background: linear-gradient(to bottom, #f5f7ff 35%, white 35%); }
 
@@ -55,15 +72,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 144rem;
   height: 80rem;
   background: linear-gradient(to bottom, #1f212e 35%, #1e202a 35%);
   z-index: -2; }
+  @media (max-width: 34.375em) {
+    .main {
+      height: auto;
+      width: auto; } }
   .main__socialMediaDb {
     flex-basis: 50%;
     display: flex;
     width: 80%;
     flex-direction: column; }
+    @media (max-width: 34.375em) {
+      .main__socialMediaDb {
+        width: 90%; } }
     .main__socialMediaDb-header {
       display: flex;
       align-items: center;
@@ -71,14 +94,28 @@ body {
       justify-content: space-between;
       margin: 3rem 0;
       font-weight: 700; }
+      @media (max-width: 34.375em) {
+        .main__socialMediaDb-header {
+          align-items: flex-start;
+          flex-direction: column; } }
       .main__socialMediaDb-header .header-text .heading-primary {
         font-size: 3rem; }
       .main__socialMediaDb-header .header-text .followers-count {
-        color: #63687e;
+        color: #8b97c6;
         font-size: 2rem; }
+        @media (max-width: 34.375em) {
+          .main__socialMediaDb-header .header-text .followers-count {
+            padding-bottom: 3rem; } }
       .main__socialMediaDb-header .header-themeSwitcherBox {
         display: flex;
         align-items: center; }
+        @media (max-width: 34.375em) {
+          .main__socialMediaDb-header .header-themeSwitcherBox {
+            width: 100%;
+            border-top: 1px solid #725050;
+            justify-content: space-between;
+            padding-top: 3rem;
+            color: #8b97c6; } }
         .main__socialMediaDb-header .header-themeSwitcherBox .themeSwitcher {
           position: relative;
           margin-left: 1.5rem;
@@ -103,12 +140,18 @@ body {
         .main__socialMediaDb-header .header-themeSwitcherBox .themeSwitcher.active::after {
           left: 92%;
           transform: translate(-100%, -50%);
-          background-color: #cccfe0;
+          background-color: #f0f2fa;
           transition: 0.2s all linear; }
     .main__socialMediaDb-content {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 3rem; }
+      @media (max-width: 34.375em) {
+        .main__socialMediaDb-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          height: 160vh; } }
       .main__socialMediaDb-content-item {
         height: 25rem;
         background-color: #252a41;
@@ -117,18 +160,25 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly; }
+        @media (max-width: 34.375em) {
+          .main__socialMediaDb-content-item {
+            height: 28rem; } }
         .main__socialMediaDb-content-item .social-media {
           color: #8b97c6;
           font-weight: 700;
           display: flex;
           align-items: center; }
           .main__socialMediaDb-content-item .social-media .icon {
-            margin-right: 0.6rem; }
+            margin-right: 0.6rem;
+            height: 2.5rem; }
         .main__socialMediaDb-content-item .followers {
           text-align: center; }
           .main__socialMediaDb-content-item .followers-value {
             font-size: 5rem;
             font-weight: 700; }
+            @media (max-width: 34.375em) {
+              .main__socialMediaDb-content-item .followers-value {
+                font-size: 7rem; } }
           .main__socialMediaDb-content-item .followers-text {
             font-size: 1.5rem;
             letter-spacing: 0.5rem;
@@ -152,8 +202,8 @@ body {
             top: 0;
             left: 0;
             content: '';
-            height: 4px;
-            width: 26.55rem;
+            height: 0.4rem;
+            width: 100%;
             background: linear-gradient(to right, #fdc468, #df4996);
             border-top-left-radius: 0.5rem;
             border-top-right-radius: 0.5rem;
@@ -175,6 +225,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center; }
+    @media (max-width: 34.375em) {
+      .main__overview {
+        width: 90%; } }
     .main__overview .heading-secondary {
       font-size: 2.8rem;
       margin-bottom: 4rem; }
@@ -182,6 +235,12 @@ body {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 3rem; }
+      @media (max-width: 34.375em) {
+        .main__overview-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          height: 170vh; } }
       .main__overview-content-item {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -191,6 +250,9 @@ body {
         background-color: #252a41;
         height: 13rem;
         border-radius: 0.5rem; }
+        @media (max-width: 34.375em) {
+          .main__overview-content-item {
+            height: 15rem; } }
         .main__overview-content-item:hover {
           cursor: pointer;
           background-color: #374062; }
@@ -198,9 +260,17 @@ body {
           justify-self: left;
           color: #8b97c6;
           font-weight: 700; }
+          @media (max-width: 34.375em) {
+            .main__overview-content-item .item-description {
+              font-size: 1.5rem; } }
+        .main__overview-content-item .media-icon {
+          height: 2.5rem; }
         .main__overview-content-item .heading-tertiary {
           justify-self: left;
           font-size: 3rem; }
+          @media (max-width: 34.375em) {
+            .main__overview-content-item .heading-tertiary {
+              font-size: 4rem; } }
         .main__overview-content-item .followersDifference {
           font-weight: 700;
           color: #1db489; }

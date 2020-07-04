@@ -11,12 +11,30 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+
+  @include respond(desktop) {
+    font-size: 50%;
+  }
+  @include respond(laptop) {
+    font-size: 45%;
+  }
+  @include respond(tablet) {
+    font-size: 40%;
+  }
+  @include respond(phone-land) {
+    font-size: 35%;
+  }
+  @include respond(phone-port) {
+    font-size: 50%;
+  }
 }
 
 body {
+  min-height: 100vh;
   font-size: 1.4rem;
   color: #fff;
   font-family: 'Inter', sans-serif;
+  background-color: $bg-color;
 
   .main.active {
     background: linear-gradient(
@@ -31,19 +49,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 144rem;
+  // width: 144rem;
   height: 80rem;
-  background: linear-gradient(
-    to bottom,
-    hsl(232, 19%, 15%) 35%,
-    hsl(230, 17%, 14%) 35%
-  );
+  background: linear-gradient(to bottom, hsl(232, 19%, 15%) 35%, $bg-color 35%);
   z-index: -2;
+
+  @include respond(phone-port) {
+    height: auto;
+    width: auto;
+  }
+
   &__socialMediaDb {
     flex-basis: 50%;
     display: flex;
     width: 80%;
     flex-direction: column;
+    @include respond(phone-port) {
+      width: 90%;
+    }
 
     &-header {
       display: flex;
@@ -53,20 +76,38 @@ body {
       margin: 3rem 0;
       font-weight: 700;
 
+      @include respond(phone-port) {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .header-text {
         .heading-primary {
           font-size: 3rem;
         }
 
         .followers-count {
-          color: hsl(228, 12%, 44%);
+          color: $blue-light-color;
           font-size: 2rem;
+          @include respond(phone-port) {
+            // font-size: 3.5rem;
+            padding-bottom: 3rem;
+          }
         }
       }
 
       .header-themeSwitcherBox {
         display: flex;
         align-items: center;
+
+        @include respond(phone-port) {
+          width: 100%;
+          border-top: 1px solid rgb(114, 80, 80);
+          justify-content: space-between;
+          padding-top: 3rem;
+          // font-size: 3.5rem;
+          color: $blue-light-color;
+        }
 
         .themeSwitcher {
           position: relative;
@@ -96,13 +137,23 @@ body {
           &:hover {
             cursor: pointer;
           }
+
+          // @include respond(phone-port) {
+          //   height: 5rem;
+          //   width: 10rem;
+
+          //   &::after {
+          //     height: 4rem;
+          //     width: 4rem;
+          //   }
+          // }
         }
 
         .themeSwitcher.active {
           &::after {
             left: 92%;
             transform: translate(-100%, -50%);
-            background-color: hsl(231, 24%, 84%);
+            background-color: $card-bg-light-color;
             transition: 0.2s all linear;
           }
         }
@@ -114,6 +165,13 @@ body {
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 3rem;
 
+      @include respond(phone-port) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 160vh;
+      }
+
       &-item {
         height: 25rem;
         background-color: $card-bg-color;
@@ -124,14 +182,19 @@ body {
         align-items: center;
         justify-content: space-evenly;
 
+        @include respond(phone-port) {
+          height: 28rem;
+        }
+
         .social-media {
-          color: hsl(228, 34%, 66%);
+          color: $blue-light-color;
           font-weight: 700;
           display: flex;
           align-items: center;
 
           .icon {
             margin-right: 0.6rem;
+            height: 2.5rem;
           }
         }
 
@@ -140,11 +203,14 @@ body {
           &-value {
             font-size: 5rem;
             font-weight: 700;
+            @include respond(phone-port) {
+              font-size: 7rem;
+            }
           }
           &-text {
             font-size: 1.5rem;
             letter-spacing: 0.5rem;
-            color: hsl(228, 12%, 44%);
+            color: $gray-light-color;
             text-transform: uppercase;
           }
         }
@@ -171,8 +237,8 @@ body {
             top: 0;
             left: 0;
             content: '';
-            height: 4px;
-            width: 26.55rem;
+            height: 0.4rem;
+            width: 100%;
             background: linear-gradient(
               to right,
               hsl(37, 97%, 70%),
@@ -195,10 +261,10 @@ body {
         }
       }
       &-item.active {
-        background-color: hsl(227, 47%, 96%);
+        background-color: $card-bg-light-color;
         &:hover {
           // cursor: pointer;
-          background-color: darken($color: hsl(227, 47%, 96%), $amount: 10);
+          background-color: darken($color: $card-bg-light-color, $amount: 10);
         }
       }
     }
@@ -211,6 +277,10 @@ body {
     flex-direction: column;
     justify-content: center;
 
+    @include respond(phone-port) {
+      width: 90%;
+    }
+
     .heading-secondary {
       font-size: 2.8rem;
       margin-bottom: 4rem;
@@ -220,6 +290,13 @@ body {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 3rem;
+
+      @include respond(phone-port) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 170vh;
+      }
 
       &-item {
         display: grid;
@@ -233,6 +310,10 @@ body {
         height: 13rem;
         border-radius: 0.5rem;
 
+        @include respond(phone-port) {
+          height: 15rem;
+        }
+
         &:hover {
           cursor: pointer;
           background-color: lighten($color: $card-bg-color, $amount: 10);
@@ -240,13 +321,22 @@ body {
 
         .item-description {
           justify-self: left;
-          color: hsl(228, 34%, 66%);
+          color: $blue-light-color;
           font-weight: 700;
+          @include respond(phone-port) {
+            font-size: 1.5rem;
+          }
+        }
+        .media-icon {
+          height: 2.5rem;
         }
 
         .heading-tertiary {
           justify-self: left;
           font-size: 3rem;
+          @include respond(phone-port) {
+            font-size: 4rem;
+          }
         }
 
         .followersDifference {
@@ -263,10 +353,10 @@ body {
         }
       }
       &-item.active {
-        background-color: hsl(227, 47%, 96%);
+        background-color: $card-bg-light-color;
         &:hover {
           // cursor: pointer;
-          background-color: darken($color: hsl(227, 47%, 96%), $amount: 10);
+          background-color: darken($color: $card-bg-light-color, $amount: 10);
         }
       }
     }
@@ -275,11 +365,11 @@ body {
 .heading-primary.active,
 .heading-tertiary.active,
 .followers-value.active {
-  color: hsl(230, 17%, 14%);
+  color: $bg-color;
 }
 
 .themeName.active,
 .followers-count.active,
 .heading-secondary.active {
-  color: hsl(228, 12%, 44%);
+  color: $gray-light-color;
 }

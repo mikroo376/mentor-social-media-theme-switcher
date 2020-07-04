@@ -12,6 +12,12 @@ let lightActive = false;
 themeSwitcherBtn.addEventListener('click', function () {
   lightActive = !lightActive;
 
+  if (lightActive) {
+    document.body.style.backgroundColor = 'white';
+  } else {
+    document.body.style.backgroundColor = 'hsl(230, 17%, 14%)';
+  }
+
   themeSwitcherBtn.classList.toggle('active');
   main.classList.toggle('active');
 

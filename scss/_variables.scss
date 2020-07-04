@@ -9,8 +9,53 @@ $instagram-color: hsl(37, 97%, 70%);
 $youtube-color: hsl(348, 97%, 39%);
 
 $card-bg-color: hsl(228, 28%, 20%);
+$bg-color: hsl(230, 17%, 14%);
+$gray-light-color: hsl(228, 12%, 44%);
+$card-bg-light-color: hsl(227, 47%, 96%);
+$blue-light-color: hsl(228, 34%, 66%);
+
+// MEDIA
+
+$breakpoint-phone-port: 550px;
+$breakpoint-phone-land: 820px;
+$breakpoint-tablet: 1024px;
+$breakpoint-laptop: 1366px;
+$breakpoint-desktop: 1680px;
 
 // MIXINS
+
+@function calculateEm($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}em;
+}
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == phone-port) {
+    @media (max-width: calculateEm($breakpoint-phone-port)) {
+      @content;
+    }
+  }
+  @if ($breakpoint == phone-land) {
+    @media (max-width: calculateEm($breakpoint-phone-land)) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tablet) {
+    @media (max-width: calculateEm($breakpoint-tablet)) {
+      @content;
+    }
+  }
+  @if ($breakpoint == laptop) {
+    @media (max-width: calculateEm($breakpoint-laptop)) {
+      @content;
+    }
+  }
+  @if ($breakpoint == desktop) {
+    @media (max-width: calculateEm($breakpoint-desktop)) {
+      @content;
+    }
+  }
+}
 
 @mixin flex-center {
   display: flex;
